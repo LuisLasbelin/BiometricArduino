@@ -182,6 +182,8 @@ void loop () {
   elPuerto.escribir( "---- loop(): acaba **** " );
   elPuerto.escribir( cont );
   elPuerto.escribir( "\n" );
+
+  delay(2000);
   
 } // loop ()
 // --------------------------------------------------------------

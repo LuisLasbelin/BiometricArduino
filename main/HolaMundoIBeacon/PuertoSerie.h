@@ -18,6 +18,7 @@ public:
   // .........................................................
   PuertoSerie (long baudios) {
 	Serial.begin( baudios );
+  Serial1.begin(9600); // Puerto serie hardware para comunicación con el sensor, 8 bit, no parity, 1 stop bit, 3.3V
 	// mejor no poner esto aquí: while ( !Serial ) delay(10);   
   } // ()
 
