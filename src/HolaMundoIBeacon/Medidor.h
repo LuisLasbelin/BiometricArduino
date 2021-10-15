@@ -40,7 +40,7 @@ public:
     Serial1.print('\r'); // Inicia una lectura del sensor. Ahora hay que espera a que nos envíe algo de vuelta!
     Serial.println("Lectura del sensor iniciada...esperando...");
     Serial1InParser();
-    String valor = 0;
+    int valor = 0;
     for (int j=0; j<11; j++) {
       Serial.println(sensorData[j]);
       // El segundo valor es el gas
@@ -57,7 +57,7 @@ public:
     Serial1.print('\r'); // Inicia una lectura del sensor. Ahora hay que espera a que nos envíe algo de vuelta!
     Serial.println("Lectura del sensor iniciada...esperando...");
     Serial1InParser();
-    String valor = 0;
+    int valor = 0;
     for (int j=0; j<11; j++) {
       Serial.println(sensorData[j]);
       // El tercer valor es temperatura
