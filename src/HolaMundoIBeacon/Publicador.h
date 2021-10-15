@@ -57,6 +57,13 @@ public:
 
   // ............................................................
   // ............................................................
+  /**
+   * Publica en la emisora los valores recibidos
+   * 
+   * @param valorCO2
+   * @param contador
+   * @param tiempoEspera
+   */
   void publicarCO2( int16_t valorCO2, uint8_t contador,
 					long tiempoEspera ) {
 
@@ -93,6 +100,13 @@ public:
 
   // ............................................................
   // ............................................................
+  /**
+   * Publica en la emisora los valores recibidos
+   * 
+   * @param valorTemperatura
+   * @param contador
+   * @param tiempoEspera
+   */
   void publicarTemperatura( int16_t valorTemperatura,
 							uint8_t contador, long tiempoEspera ) {
 

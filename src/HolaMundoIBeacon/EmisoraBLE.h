@@ -82,6 +82,12 @@ public:
 
   // .........................................................
   // .........................................................
+  /**
+   * Enciende la emisora y prepara los callbacks 
+   * 
+   * @params cbce callback cuando se establece la conexion
+   * @params cbct callback cuando se termina la conexion
+   */
   void encenderEmisora( CallbackConexionEstablecida cbce,
 						CallbackConexionTerminada cbct ) {
 
@@ -94,6 +100,9 @@ public:
 
   // .........................................................
   // .........................................................
+  /**
+   * Detiene el anuncio
+   */
   void detenerAnuncio() {
 
 	if ( (*this).estaAnunciando() ) {
@@ -106,12 +115,25 @@ public:
   // .........................................................
   // estaAnunciando() -> Boleano
   // .........................................................
+  /**
+   * Comprueba que este anunciando
+   * 
+   * @return bool devuelve true cuando esta anunciando
+   */
   bool estaAnunciando() {
 	return Bluefruit.Advertising.isRunning();
   } // ()
 
   // .........................................................
   // .........................................................
+  /**
+   * Emite un anuncio en el beacon con los datos dados
+   * 
+   * @params beaconUUID numeros de identificacion del sensor
+   * @params major valor int
+   * @params minor valor medido de temperatura o co2
+   * @params rssi configuracion
+   */
   void emitirAnuncioIBeacon( uint8_t * beaconUUID, int16_t major, int16_t minor, uint8_t rssi ) {
 
 	//
@@ -200,6 +222,12 @@ public:
 
 	const uint8_t tamanyoCarga = strlen( carga );
   */
+  /**
+   * Emite un anuncio en un beacon libre
+   * 
+   * @params carga datos para enviar
+   * @params tamanyoCarga longitud de caracteres de los datos
+   */
   void emitirAnuncioIBeaconLibre( const char * carga, const uint8_t tamanyoCarga ) {
 
 	(*this).detenerAnuncio(); 
@@ -262,6 +290,12 @@ public:
 
   // .........................................................
   // .........................................................
+  /**
+   * Añade un servicio 
+   * 
+   * @params servicio servicio que quiere añadir
+   * @return bool devuelve true si se ha añadido
+   */
   bool anyadirServicio( ServicioEnEmisora & servicio ) {
 
 	Globales::elPuerto.escribir( " Bluefruit.Advertising.addService( servicio ); \n");
@@ -281,11 +315,24 @@ public:
   
   // .........................................................
   // .........................................................
+  /**
+   * Añade un servicio 
+   * 
+   * @params servicio servicio que quiere añadir
+   * @return bool devuelve true si se ha añadido
+   */
   bool anyadirServicioConSusCaracteristicas( ServicioEnEmisora & servicio ) { 
 	return (*this).anyadirServicio( servicio );
   } // 
 
   // .........................................................
+  /**
+   * Añade un servicio 
+   * 
+   * @params servicio servicio que quiere añadir
+   * @params caracteristica caracteristicas del servicio
+   * @return bool devuelve true si se ha añadido
+   */
   template <typename ... T>
   bool anyadirServicioConSusCaracteristicas( ServicioEnEmisora & servicio,
 											 ServicioEnEmisora::Caracteristica & caracteristica,
@@ -298,6 +345,13 @@ public:
   } // ()
 
   // .........................................................
+  /**
+   * Añade un servicio y lo activa
+   * 
+   * @params servicio servicio que quiere añadir
+   * @params caracteristica caracteristicas del servicio
+   * @return bool devuelve true si se ha añadido
+   */
   template <typename ... T>
   bool anyadirServicioConSusCaracteristicasYActivar( ServicioEnEmisora & servicio,
 													 // ServicioEnEmisora::Caracteristica & caracteristica,
@@ -313,12 +367,22 @@ public:
 
   // .........................................................
   // .........................................................
+  /**
+   * Establece un callback para la conexion
+   * 
+   * @params cb callback
+   */
   void instalarCallbackConexionEstablecida( CallbackConexionEstablecida cb ) {
 	Bluefruit.Periph.setConnectCallback( cb );
   } // ()
 
   // .........................................................
   // .........................................................
+    /**
+   * Establece un callback para la conexion
+   * 
+   * @params cb callback
+   */
   void instalarCallbackConexionTerminada( CallbackConexionTerminada cb ) {
 	Bluefruit.Periph.setDisconnectCallback( cb );
   } // ()
@@ -337,4 +401,3 @@ public:
 // ----------------------------------------------------------
 // ----------------------------------------------------------
 // ----------------------------------------------------------
-

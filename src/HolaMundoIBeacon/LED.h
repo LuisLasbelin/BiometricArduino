@@ -57,6 +57,11 @@ public:
 
   // .........................................................
   // .........................................................
+  /**
+   * Se enciende durante una cantidad fija de tiempo
+   * 
+   * @params tiempo cantidad de tiempo encendido
+   */
   void brillar (long tiempo) {
 	encender ();
 	esperar(tiempo); 
