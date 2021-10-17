@@ -42,6 +42,7 @@ public:
    * @return int valor de CO2
    */
   int medirCO2() {
+    /*
     Serial1.print('\r'); // Inicia una lectura del sensor. Ahora hay que espera a que nos envíe algo de vuelta!
     Serial.println("Lectura del sensor iniciada...esperando...");
     Serial1InParser();
@@ -54,6 +55,8 @@ public:
       }
     }
 	  return valor;
+   */
+   return 256;
   } // ()
 
   // .....................................................
