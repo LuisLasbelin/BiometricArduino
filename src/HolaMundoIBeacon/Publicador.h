@@ -16,17 +16,18 @@ class Publicador {
 private:
 
   uint8_t beaconUUID[16] = { 
-	'1','2', '3', '4', '5'
+  'E', 'P', 'S', 'G', '-', 'G', 'T', 'I', 
+  '-', 'P', 'R', 'O', 'Y', '-', '3', 'A'
 	};
 
   // ............................................................
   // ............................................................
 public:
   EmisoraBLE laEmisora {
-	"12345", //  nombre emisora
-	  0x004c, // fabricanteID (Apple)
-	  4 // txPower
-	  };
+  "GTI-3A", //  nombre emisora
+    0x004c, // fabricanteID (Apple)
+    4 // txPower
+    };
   
   const int RSSI = -53; // por poner algo, de momento no lo uso
 
@@ -58,6 +59,10 @@ public:
   // ............................................................
   // ............................................................
   /**
+   * valorCO2:Z,
+   * contador:Z,
+   * tiempoEspera:Z,
+   * -> ()
    * Publica en la emisora los valores recibidos
    * 
    * @param valorCO2
@@ -101,6 +106,10 @@ public:
   // ............................................................
   // ............................................................
   /**
+   * valorTemperatura:Z,
+   * contador:Z,
+   * tiempoEspera:Z,
+   * -> ()
    * Publica en la emisora los valores recibidos
    * 
    * @param valorTemperatura

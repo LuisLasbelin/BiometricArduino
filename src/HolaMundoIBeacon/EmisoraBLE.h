@@ -291,6 +291,7 @@ public:
   // .........................................................
   // .........................................................
   /**
+   * servicio -> () -> VoF
    * Añade un servicio 
    * 
    * @params servicio servicio que quiere añadir
@@ -316,6 +317,7 @@ public:
   // .........................................................
   // .........................................................
   /**
+   * servicio -> () -> VoF
    * Añade un servicio 
    * 
    * @params servicio servicio que quiere añadir
@@ -327,6 +329,7 @@ public:
 
   // .........................................................
   /**
+   * servicio -> () -> VoF
    * Añade un servicio 
    * 
    * @params servicio servicio que quiere añadir
@@ -346,6 +349,7 @@ public:
 
   // .........................................................
   /**
+   * servicio -> () -> VoF
    * Añade un servicio y lo activa
    * 
    * @params servicio servicio que quiere añadir
@@ -378,7 +382,8 @@ public:
 
   // .........................................................
   // .........................................................
-    /**
+  /**
+   * cb -> ()
    * Establece un callback para la conexion
    * 
    * @params cb callback

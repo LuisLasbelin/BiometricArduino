@@ -10,20 +10,11 @@ class Medidor {
   // .....................................................
   // .....................................................
 private:
-int sensorData [11];
-void Serial1InParser(void)
-{
-    int i = 0;
-    for (int i =0; i<11; i++) {
-       while(!Serial1.available()) { }
-       sensorData[i] = Serial1.parseInt();
-    }
-}
 
 public:
 
   // .....................................................
-  // constructor
+  // constructor()
   // .....................................................
   Medidor(  ) {
   } // ()
@@ -37,6 +28,7 @@ public:
   // .....................................................
   // .....................................................
   /**
+   * () -> Z
    * Analiza los valores recibidos por el serial
    * 
    * @return int valor de CO2
@@ -61,24 +53,14 @@ public:
 
   // .....................................................
   // .....................................................
-    /**
+  /**
+   * () -> Z
    * Analiza los valores recibidos por el serial
    * 
    * @return int valor de temperatura
    */
   int medirTemperatura() {
-    Serial1.print('\r'); // Inicia una lectura del sensor. Ahora hay que espera a que nos envíe algo de vuelta!
-    Serial.println("Lectura del sensor iniciada...esperando...");
-    Serial1InParser();
-    int valor = 0;
-    for (int j=0; j<11; j++) {
-      Serial.println(sensorData[j]);
-      // El tercer valor es temperatura
-      if(j == 2){
-        valor = sensorData[j];
-      }
-    }
-    return valor;
+    return 31;
   } // ()
 	
 }; // class
